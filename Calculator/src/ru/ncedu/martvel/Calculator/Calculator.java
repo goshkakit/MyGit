@@ -3,10 +3,11 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Calculator {
-    public double arg,result;
+    private double arg,result;
+    private int calcCounter=0;
     String operation;
 
-    public double getArg() {
+    private double getArg() {
         Scanner inDouble = new Scanner(System.in);
         System.out.println("Enter a number: ");
         try{
@@ -17,28 +18,61 @@ public class Calculator {
         }
         return arg;
     }
-    public String getOperation(){
+    private String getOperation(){
         Scanner  inChar = new Scanner(System.in);
-        System.out.println("Enter an operation");
+        System.out.println("Enter an operation:");
         operation = inChar.nextLine();
         return operation;
     }
 
     public double calculation() throws InputMismatchException {
+        double arg1;
         try {
-            double arg1=this.getArg();
+            if(calcCounter == 0) {
+                arg1 = this.getArg();
+                calcCounter++;
+            } else {
+                arg1 = result;
+            }
             this.getOperation();
-            if(operation.equals("+")) return summing(arg1);
-            else if(operation.equals("-")) return differencing(arg1);
-            else if(operation.equals("*")) return multiplicating(arg1);
-            else if(operation.equals("/")) return dividing(arg1);
-            else if(operation.equals("^")) return exponentiation(arg1);
+            if(operation.equals("+")) System.out.println(summing(arg1));
+            else if(operation.equals("-")) System.out.println(differencing(arg1));
+            else if(operation.equals("*")) System.out.println(multiplicating(arg1));
+            else if(operation.equals("/")) System.out.println(dividing(arg1));
+            else if(operation.equals("^")) System.out.println(exponentiation(arg1));
+            else if(operation.equals("sin")) System.out.println(sin(arg1));
             else throw new InputMismatchException();
         } catch (InputMismatchException e){
             System.out.println("No such operation");
             System.exit(0);
         }
+        this.continueProcess();
         return 0;
+    }
+
+    private void continueProcess() throws InputMismatchException{
+        System.out.println("Do you want to continue equations?\nPrint yes to continue, or print no");
+        String yes = "yes";
+        String no = "no";
+        String question;
+        Scanner command = new Scanner(System.in);
+        try {
+            question = command.next();
+            if (question.equals(yes)) {
+                this.calculation();
+            } else if (question.equals(no)){
+                System.out.println("Calculation finished, result is "+ result);
+            }  else
+                throw new InputMismatchException();
+        } catch (InputMismatchException e){
+            System.out.println("Can't continue");
+            System.exit(0);
+        }
+    }
+    private double sin(double arg1){
+        Sin sin = new Sin();
+        System.out.println("Result of taking sin(): ");
+        return result = sin.sinus(arg1);
     }
 
     private double exponentiation(double arg1){
@@ -87,7 +121,5 @@ public class Calculator {
     public static void main(String[] args) {
         Calculator equation = new Calculator();
         equation.calculation();
-        System.out.println(equation.result);
     }
 }
-
