@@ -68,6 +68,5 @@ public class DateCollectionsImpl implements DateCollections {
 
     public static void main(String[] args) {
         DateCollectionsImpl date = new DateCollectionsImpl();
-        date.toCalendar("Jan 12, 1952");
     }
 }
