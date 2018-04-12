@@ -4,8 +4,10 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
 public class WordProcessorImpl implements WordProcessor {
     public String lineField = null;
@@ -51,23 +53,26 @@ public class WordProcessorImpl implements WordProcessor {
             throw new IllegalStateException();
         } else {
             lineField = lineField.toLowerCase();
-            Set<String> set = Arrays.stream(lineField.split("[\\s+\\n+\\t+\\r+]")).collect(Collectors.toSet());
+            Set<String> set = new HashSet<String>(Arrays.asList(lineField.split("[\\s\\n\\t\\r]+")));
+            Iterator<String> iterator = set.iterator();
+            Set<String> newSet = new HashSet<>();
             if (begin == null || begin.equals("")) {
                 return set;
             } else {
-                for (String addStr : set) {
-                    if (!addStr.startsWith(begin.toLowerCase())) {
-                        set.remove(addStr);
+                while (iterator.hasNext()) {
+                    String addStr = iterator.next();
+                    if (addStr.startsWith(begin.toLowerCase())) {
+                        newSet.add(addStr);
                     }
                 }
             }
-            return set;
+            return newSet;
         }
     }
 
     public static void main(String[] args) {
         WordProcessorImpl text = new WordProcessorImpl();
-        text.setSource("hey been    f    f   f  j  iiii    ip hey");
+        text.setSource("hey been  h  f    f   f  j  iiii    ip hey");
         System.out.println(text.wordsStartWith("h"));
         System.out.println(text.getText());
     }
