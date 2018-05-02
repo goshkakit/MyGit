@@ -1,139 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
-   <columnConstraints>
-      <ColumnConstraints />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints />
-   </rowConstraints>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.121" fx:controller="sample.Calculator">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="300.0">
+      <AnchorPane fx:id="panel" prefHeight="400.0" prefWidth="600.0">
          <children>
-            <GridPane layoutY="100.0" prefHeight="300.0" prefWidth="300.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <Button fx:id="ButtonTwo" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#addTwo" style="-fx-background-color: #FFFACD; -fx-border-color: #000000;" text="2" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="ButtonNine" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#addNine" style="-fx-background-color: #FFFACD; -fx-border-color: #000000;" text="9" GridPane.columnIndex="2">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="ButtonEight" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#addEight" style="-fx-background-color: #FFFACD; -fx-border-color: #000000;" text="8" GridPane.columnIndex="1">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="ButtonSeven" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#addSeven" style="-fx-background-color: #FFFACD; -fx-border-color: #000000;" text="7">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="ButtonSix" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#addSix" style="-fx-background-color: #FFFACD; -fx-border-color: #000000;" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="ButtonFive" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#addFive" style="-fx-background-color: #FFFACD; -fx-border-color: #000000;" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="ButtonFour" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#addFour" style="-fx-background-color: #FFFACD; -fx-border-color: #000000;" text="4" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="ButtonThree" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#addThree" style="-fx-background-color: #FFFACD; -fx-border-color: #000000;" text="3" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="ButtonOne" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#addOne" style="-fx-background-color: #FFFACD; -fx-border-color: #000000;" text="1" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="ButtonPlus" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#Plus" style="-fx-background-color: #FFFACD; -fx-border-color: #000000;" text="+" GridPane.columnIndex="3" GridPane.rowIndex="3">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="ButtonEquals" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#Equal" style="-fx-background-color: #FFFACD; -fx-border-color: #000000;" text="=" GridPane.columnIndex="2" GridPane.rowIndex="3">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="ButtonComma" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#addComma" style="-fx-background-color: #FFFACD; -fx-border-color: #000000;" text="." GridPane.columnIndex="1" GridPane.rowIndex="3">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="ButtonDel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#Del" style="-fx-background-color: #FFFACD; -fx-border-color: #000000;" text="Del" GridPane.columnIndex="4">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="ButtonMinuse" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#Minuse" style="-fx-background-color: #FFFACD; -fx-border-color: #000000;" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="ButtonMult" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#Mult" style="-fx-background-color: #FFFACD; -fx-border-color: #000000;" text="*" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="30.0" />
-                     </font></Button>
-                  <Button fx:id="ButtonDiv" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#Div" style="-fx-background-color: #FFFACD; -fx-border-color: #000000;" text="/" GridPane.columnIndex="3">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="ButtonDegree" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#Degree" style="-fx-background-color: FFFACD; -fx-border-color: black;" text="^" GridPane.columnIndex="4" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="ButtonZero" mnemonicParsing="false" onMouseClicked="#addZero" prefHeight="75.0" prefWidth="80.0" style="-fx-background-color: #FFFACD; -fx-border-color: #000000;" text="0" GridPane.rowIndex="3">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="ButtonReverse" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#Reverse" style="-fx-background-color: #FFFACD; -fx-border-color: black;" text="1/x" GridPane.columnIndex="4" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="18.0" />
-                     </font></Button>
-               </children>
-            </GridPane>
-            <TextField fx:id="TextField" style="-fx-background-color: #FFDAB9;" AnchorPane.bottomAnchor="300.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Label layoutX="74.0" layoutY="67.0" text="meme" />
+            <Button fx:id="butt" layoutX="213.0" layoutY="124.0" mnemonicParsing="false" onMouseMoved="#move" rotate="-49.8" text="тык" textFill="#d02a96" />
+            <CheckBox fx:id="task" layoutX="100.0" layoutY="234.0" mnemonicParsing="false" text="Выпить пива" textFill="#3cba6c">
                <font>
-                  <Font size="36.0" />
+                  <Font name="Copperplate" size="36.0" />
                </font>
-            </TextField>
+            </CheckBox>
+            <Slider layoutX="468.0" layoutY="106.0" />
          </children>
       </AnchorPane>
    </children>
